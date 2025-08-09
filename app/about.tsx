@@ -1,20 +1,20 @@
-import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from 'react-native'
 
-export default function Index() {
+const About = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello World</Text>
-      <Link href={"/about"}>About us</Link>
+      <Text style={styles.text}>About</Text>
     </View>
-  );
+  )
 }
+
+export default About
 
 const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: 'red',
+        backgroundColor: 'blue',
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -24,3 +24,4 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 })
+
