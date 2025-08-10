@@ -1,24 +1,22 @@
-import { StyleSheet, Text, View } from "react-native";
+import { createHomeStyles } from "@/assets/styles/home.styles";
+import { useTheme } from "@/hooks/useTheme";
+import { Text, TouchableOpacity, View } from "react-native";
+
+
+
 
 export default function Index() {
+  const {toggleDarkMode, colors} = useTheme();
+
+  const homeStyles = createHomeStyles(colors)
+
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hello World</Text>
+    <View style={homeStyles.container}>
+      <Text style={homeStyles.subtitle}>Hello World</Text>
+   <TouchableOpacity onPress={toggleDarkMode}>
+        <Text style={homeStyles.subtitle}>Toggle Dark Mode</Text>
+   </TouchableOpacity>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-
-    container: {
-        flex: 1,
-        // backgroundColor: 'red',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    text: {
-        fontSize: 20,
-        // color: 'white',
-        fontWeight: 'bold',
-    },
-})
